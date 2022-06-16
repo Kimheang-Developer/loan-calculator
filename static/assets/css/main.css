@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Noto Sans Khmer', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        background-color: #fff;
+        color: #303030;
+    }
+    @layer utilities {
+        .container {
+            @apply max-w-md mx-auto px-10;
+        }
+
+        .btn_month {
+            @apply bg-blue-500 w-full flex items-center justify-center text-white font-medium text-sm px-5 py-2.5 cursor-pointer hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300;
+        }
+
+        .input_control {
+            @apply border border-gray-200 text-gray-900 text-sm focus:outline-none block w-full p-2.5;
+        }
+
+        .loan_wrapper {
+            @apply before:content-['*'] before:ml-0.5 before:text-red-500 mt-2;
+        }
+
+        .title {
+            @apply py-2 font-semibold;
+        }
+
+        .month_wrapper {
+            @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2;
+        }
+
+        .range__slider [type="range"] {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 13px;
+            border-radius: 6px;
+            background: #f1f1f1;
+            outline: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* custom thumb */
+        .range__slider [type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: #3b82f6 5px solid;
+            cursor: pointer;
+            -webkit-transition: background .15s ease-in-out;
+            transition: background .15s ease-in-out;
+        }
+
+        .range__slider [type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border: 0;
+            border-radius: 50%;
+            background: #f0932b;
+            border: #3b82f6 5px solid; cursor: pointer;
+            -webkit-transition: background .15s ease-in-out;
+            transition: background .15s ease-in-out;
+        }
+
+        .range__slider [type="range"]::-moz-range-thumb:hover {
+            background: #2563eb;
+        }
+
+        /* remove border */
+        input::-moz-focus-inner, input::-moz-focus-outer {
+            border: 0;
+        }
+    }
+}
